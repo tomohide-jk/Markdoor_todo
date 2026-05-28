@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h1 style="margin: 0;">Todo</h1>
+            <button type="button" id="btn-toggle-form" style="background-color: #28a745; color: white; padding: 8px 16px; font-weight: bold; border: none; border-radius: 4px; cursor: pointer;">＋ タスクを追加</button>
+        </div>
+        
+        <div id="form-container" style="display: none; background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 25px; border: 1px solid #e9ecef;">
+            <h3 id="form-title" style="margin-top: 0; margin-bottom: 10px; color: #495057;">タスクの追加</h3>
+            <form id="todo-form" style="display: flex; flex-direction: column; gap: 8px; margin: 0;">
+                <input type="text" id="title" placeholder="タスクのタイトルを入力..." required style="padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                <textarea id="description" placeholder="詳細（任意）..." style="height: 60px; resize: none; font-size: 14px; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                <button type="submit" id="submit-btn" style="background-color: #28a745; color: white; padding: 10px; font-weight: bold; border: none; border-radius: 4px; cursor: pointer;">追加する</button>
+                
+                <div id="form-delete-area"></div>
+            </form>
+        </div>
+
+        <div class="filter-buttons" style="display: flex; gap: 8px; margin-bottom: 20px; justify-content: center;">
+            <button type="button" id="filter-all" style="background-color: #6c757d; color: white; padding: 6px 12px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer;">すべて</button>
+            <button type="button" id="filter-active" style="background-color: #007bff; color: white; padding: 6px 12px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer;">未完了</button>
+            <button type="button" id="filter-completed" style="background-color: #28a745; color: white; padding: 6px 12px; font-size: 14px; border: none; border-radius: 4px; cursor: pointer;">完了済み</button>
+        </div>
+
+        <div id="todo-list"></div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
